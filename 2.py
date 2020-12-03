@@ -3,7 +3,7 @@ from collections import Counter
 file = open('inputs/2.txt')
 data = [
     [
-        element.strip('\n').strip(':')
+        element.rstrip('\n:')
         for element in line.split(' ')
     ]
     for line in file.readlines()

@@ -3,7 +3,7 @@ from numpy import product
 tree_symbol = '#'
 
 file = open('inputs/3.txt')
-board = [line for line in file.read().split('\n')]
+board = file.read().split('\n')
 board_length = len(board[0])
 
 def traverse(right: int, down: int) -> int:
@@ -17,9 +17,7 @@ def traverse(right: int, down: int) -> int:
     Returns:
         The number of trees encountered.
     """
-    x = 0
-    y = 0
-    trees = 0
+    x = y = trees = 0
 
     while True:
         try:
