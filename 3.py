@@ -1,4 +1,4 @@
-from numpy import product
+from math import prod
 
 tree_symbol = '#'
 
@@ -36,7 +36,7 @@ def traverse(right: int, down: int) -> int:
 print(traverse(3, 1))
 
 # Part B - O(n)
-print(product([
+print(prod((
     traverse(1, 1), traverse(3, 1), traverse(5, 1),
     traverse(7, 1), traverse(1, 2)
-]))
+)))
