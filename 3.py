@@ -23,9 +23,9 @@ def traverse(right: int, down: int) -> int:
 
     while True:
         try:
-            position = board[y + down][(x + right) % board_length]
             x += right
             y += down
+            position = board[y][x % board_length]
             if position == tree_symbol:
                 trees += 1
         except IndexError:
