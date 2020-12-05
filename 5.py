@@ -6,7 +6,7 @@ data = file.read().split('\n')
 last_row = 127
 last_col = 7
 
-def find_seat(line: str, row: bool = False) -> str:
+def find_seat(line: str, row: bool = False) -> int:
     """
     Find the position of a row or column.
 
@@ -23,16 +23,16 @@ def find_seat(line: str, row: bool = False) -> str:
 
     for letter in letters:
         if letter in 'BR':
-            start, end = start + ceil((end - start) / 2), end
+            start += ceil((end - start) / 2)
         else:
-            start, end = start, start + floor((end - start) / 2)
+            end = start + floor((end - start) / 2)
 
     return start
 
 
 # Part A - O(n lg n)
 seats = [
-    int(8 * find_seat(line, row=True) + find_seat(line))
+    8 * find_seat(line, row=True) + find_seat(line)
     for line in data
 ]
 seats.sort(reverse=True)
