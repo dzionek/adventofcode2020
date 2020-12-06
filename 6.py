@@ -5,12 +5,10 @@ data = file.read().split('\n\n')
 print(sum([len(set(el.replace('\n', ''))) for el in data]))
 
 # Part B
-res = sum([
+print(sum([
     sum([
-        el.replace('\n', '').count(letter) == el.count('\n') + 1
-        for letter in set(el.replace('\n', ''))
+        el.rstrip().count(letter) == el.count('\n') + 1
+        for letter in set(el.rstrip())
     ])
     for el in data
-])
-
-print(res)
+]))
