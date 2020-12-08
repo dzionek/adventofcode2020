@@ -34,7 +34,7 @@ class Program:
         return self.visited[self.pc]
 
     def is_terminating(self) -> bool:
-        return self.pc == len(data)
+        return self.pc == len(self.instructions)
 
 
 # Part A
