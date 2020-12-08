@@ -14,7 +14,7 @@ class Program:
         self.instructions = instructions
         self.acc = 0
         self.pc = 0
-        self.visited = [False] * len(data)
+        self.visited = [False] * len(instructions)
 
     def next_line(self) -> None:
         instr = self.instructions[self.pc]
