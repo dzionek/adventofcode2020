@@ -1,7 +1,7 @@
 with open('inputs/10.txt') as f:
     data = [int(i) for i in f.read().split('\n')]
 
-# Part 1
+# Part A
 difference1 = 0
 difference3 = 0
 jolt = 0
@@ -27,10 +27,7 @@ res[0] = 1
 if 1 in data:
     res[1] = 1
 if 2 in data:
-    if 1 in data:
-        res[2] = 2
-    else:
-        res[2] = 1
+    res[2] = 2 if 1 in data else 1
 
 for el in sorted([el for el in data if el > 2]):
     res[el] = res[el-1] + res[el-2] + res[el-3]
