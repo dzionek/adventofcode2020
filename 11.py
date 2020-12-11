@@ -3,7 +3,6 @@ from typing import List
 with open('inputs/11.txt') as f:
     data_input = f.read().split('\n')
 
-num_occupied = 0
 num_new_round = 1
 width = len(data_input[0])
 height = len(data_input)
@@ -174,9 +173,7 @@ def how_many_see(data_round: List[str], i: int, j: int) -> int:
     return occupied
 
 
-num_occupied = 0
 num_new_round = 1
-
 data = data_input[:]
 while num_new_round:
     num_new_round = 0
