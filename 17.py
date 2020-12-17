@@ -1,5 +1,4 @@
 from typing import Tuple, List, Dict
-from copy import deepcopy
 from itertools import product
 
 turns = 6
@@ -34,7 +33,7 @@ def find_neighbors(p: Point, dim: int) -> List[Point]:
 
 def get_next_items(points_dict: Dict[Point, bool], dim: int,
                    domain_points: List[Point]) -> Dict[Point, bool]:
-    new_points = deepcopy(points_dict)
+    new_points = dict(points_dict)
     for point in domain_points:
         is_active = points_dict[point]
         neighbors = find_neighbors(point, dim)
