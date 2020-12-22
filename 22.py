@@ -9,10 +9,7 @@ second_player_initial = deque(map(int, data[1].splitlines()[1:]))
 
 
 def get_score(winner_cards: Deque[int]) -> int:
-    return sum([
-        i * winner_cards.popleft()
-        for i in reversed(range(1, len(winner_cards) + 1))
-    ])
+    return sum([i * winner_cards.pop() for i in range(1, len(winner_cards) + 1)])
 
 
 # Part A
